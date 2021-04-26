@@ -3,10 +3,9 @@ Quando('faço uma requisição GET para o serviço planets') do
 end                                                                               
                                                                                     
   Então('o serviço planets deve responder com {int}') do |int|                      
-  # Então('o serviço planets deve responder com {float}') do |float|                
-    pending # Write code here that turns the phrase above into concrete actions     
+    expect(@resquest_planets.code).to eq status_code
   end                                                                               
                                                                                     
   Então('retorna a lista de planets') do                                            
-    pending # Write code here that turns the phrase above into concrete actions     
+    expect(@resquest_planets.message).not_to be_empty
   end                                                                               
